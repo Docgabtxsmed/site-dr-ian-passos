@@ -1,0 +1,50 @@
+/* preview card shell — small atomic cards for the Design System tab */
+@import url("../colors_and_type.css");
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--fg);
+  background: transparent;
+}
+.card {
+  padding: 24px 28px;
+  background: #ffffff;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.card.dark {
+  background: var(--c-azul-profundo);
+  color: #ffffff;
+}
+.card.brisa {
+  background: var(--c-azul-brisa);
+}
+.card.bege {
+  background: var(--c-bege-calmante);
+}
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+.mono {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+.label-small {
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--c-cinza-neblina);
+}

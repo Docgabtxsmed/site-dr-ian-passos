@@ -1,0 +1,285 @@
+/* ============================================================
+   Dr. Ian Passos — Otorrinolaringologista
+   Colors + Type tokens
+   ------------------------------------------------------------
+   CRM-PE 28737 — RQE 15742
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-Italic.ttf") format("truetype");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-Light.ttf") format("truetype");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Seravek";
+  src: url("./fonts/Seravek-BoldItalic.ttf") format("truetype");
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-Regular.ttf") format("truetype");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-Medium.ttf") format("truetype");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-SemiBold.ttf") format("truetype");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-Bold.ttf") format("truetype");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("./fonts/RethinkSans-Italic.ttf") format("truetype");
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+
+:root {
+  /* ============================================================
+     COLOR — Brand Palette (official)
+     ============================================================ */
+  --c-azul-profundo:   #043959;  /* Azul Profundo Vital   — Confiança, estabilidade */
+  --c-cinza-neblina:   #8298A8;  /* Cinza Neblina Suave   — Serenidade, acolhimento */
+  --c-azul-renovacao:  #66ADD9;  /* Azul Renovação        — Vitalidade, renovação    */
+  --c-azul-brisa:      #C9DFF2;  /* Azul Brisa Leve       — Empatia, transparência   */
+  --c-bege-calmante:   #DDC9C3;  /* Bege Calmante         — Cuidado, conforto        */
+  --c-branco:          #FFFFFF;
+
+  /* Brand color scales (derived from oficial palette, see preview/colors-scales) */
+  --c-profundo-50:  #E6EEF4;
+  --c-profundo-100: #BFD2DF;
+  --c-profundo-200: #94B2C5;
+  --c-profundo-300: #6991AB;
+  --c-profundo-400: #386D8C;
+  --c-profundo-500: #043959;  /* base */
+  --c-profundo-600: #03304B;
+  --c-profundo-700: #02263C;
+  --c-profundo-800: #021C2D;
+  --c-profundo-900: #01121E;
+
+  --c-renovacao-50:  #EAF5FB;
+  --c-renovacao-100: #CFE6F4;
+  --c-renovacao-200: #A8D3EA;
+  --c-renovacao-300: #8BC2E2;
+  --c-renovacao-400: #66ADD9; /* base */
+  --c-renovacao-500: #4F9AC7;
+  --c-renovacao-600: #3E83AE;
+  --c-renovacao-700: #2E6A8E;
+
+  --c-bege-50:  #FAF5F3;
+  --c-bege-100: #F2E8E4;
+  --c-bege-200: #E8D8D2;
+  --c-bege-300: #DDC9C3; /* base */
+  --c-bege-400: #C9B0A8;
+  --c-bege-500: #B0958C;
+
+  /* ============================================================
+     SEMANTIC TOKENS
+     ============================================================ */
+  /* Surfaces */
+  --bg:               var(--c-branco);
+  --bg-soft:          #F7FAFC;          /* near-white, slight cool */
+  --bg-empatia:       var(--c-azul-brisa);   /* hero / sections claras */
+  --bg-cuidado:       var(--c-bege-calmante);/* humano: depoimentos, sobre */
+  --bg-profundo:      var(--c-azul-profundo);/* dark sections, footer */
+
+  /* Foreground / text */
+  --fg:               var(--c-azul-profundo);
+  --fg-muted:         #4B6478;
+  --fg-soft:          var(--c-cinza-neblina);
+  --fg-on-dark:       #FFFFFF;
+  --fg-on-dark-muted: var(--c-azul-brisa);
+
+  /* Strokes */
+  --stroke:           rgba(4, 57, 89, 0.10);
+  --stroke-strong:    rgba(4, 57, 89, 0.20);
+  --stroke-on-dark:   rgba(255, 255, 255, 0.16);
+
+  /* Action / CTA */
+  --action:           var(--c-azul-profundo);
+  --action-hover:     #06283D;        /* darker profundo */
+  --action-press:     #021C2D;
+  --action-on:        #FFFFFF;
+
+  --action-2:         var(--c-azul-renovacao); /* lighter alternative CTA */
+  --action-2-hover:   #4F9AC7;
+  --action-2-on:      var(--c-azul-profundo);
+
+  /* Accent — toques humanos */
+  --accent-humano:    var(--c-bege-calmante);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(102, 173, 217, 0.45);
+
+  /* ============================================================
+     RADII
+     ============================================================ */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  /* NUNCA: pill / fully rounded buttons. Max 16px. */
+
+  /* ============================================================
+     SHADOWS — leves, suaves
+     NUNCA shadow-2xl ou drop-shadow dramático.
+     ============================================================ */
+  --shadow-xs: 0 1px 2px rgba(4, 57, 89, 0.05);
+  --shadow-sm: 0 1px 3px rgba(4, 57, 89, 0.08), 0 1px 2px rgba(4, 57, 89, 0.04);
+  --shadow-md: 0 4px 12px rgba(4, 57, 89, 0.08), 0 2px 4px rgba(4, 57, 89, 0.04);
+  --shadow-lg: 0 12px 32px rgba(4, 57, 89, 0.10), 0 4px 8px rgba(4, 57, 89, 0.04);
+
+  /* ============================================================
+     SPACING
+     ============================================================ */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;   /* mínimo entre seções mobile */
+  --space-16: 64px;
+  --space-20: 80px;   /* mínimo entre seções desktop */
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ============================================================
+     TYPOGRAPHY
+     Display/Headlines: Seravek (Bold, ExtraBold)
+     Body/UI:           Rethink Sans (Regular, Medium, SemiBold)
+     ============================================================ */
+  --font-display: "Seravek", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Rethink Sans", ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+
+  /* Mobile-first sizes */
+  --fs-h1: 32px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-small: 14px;
+  --fs-eyebrow: 12px;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.25;
+  --lh-normal: 1.5;
+  --lh-loose: 1.7;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-eyebrow: 0.14em;
+
+  /* Layout */
+  --container: 1200px;
+  --container-narrow: 880px;
+}
+
+@media (min-width: 880px) {
+  :root {
+    --fs-h1: 56px;
+    --fs-h2: 36px;
+    --fs-h3: 22px;
+    --fs-body: 18px;
+    --fs-small: 16px;
+  }
+}
+
+/* ============================================================
+   ELEMENT DEFAULTS
+   ============================================================ */
+.ip-base, body.ip {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.ip-display, .ip h1, .ip h2, .ip h3 {
+  font-family: var(--font-display);
+  color: var(--fg);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+.ip h1, .ip-h1 {
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+.ip h2, .ip-h2 {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+.ip h3, .ip-h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+.ip p, .ip-p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--fg-muted);
+  margin: 0;
+  text-wrap: pretty;
+}
+.ip-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--c-azul-renovacao);
+}
+.ip-small {
+  font-size: var(--fs-small);
+  color: var(--fg-muted);
+}
+.ip-fineprint {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--fg-soft);
+}

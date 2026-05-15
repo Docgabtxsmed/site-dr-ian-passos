@@ -1,0 +1,38 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css">
+<style>
+.btn { font-family: var(--font-body); font-size:15px; font-weight:600; padding:12px 20px; border-radius:8px; border:1px solid transparent; cursor:pointer; line-height:1.1; letter-spacing:-0.005em; }
+.btn-primary { background:#043959; color:#fff; }
+.btn-primary.hover { background:#06283D; box-shadow: var(--shadow-sm); }
+.btn-renovacao { background:#66ADD9; color:#043959; }
+.btn-ghost { background:transparent; color:#043959; border-color: rgba(4,57,89,.20); }
+.btn .lab { font-size:10px; font-weight:600; color:var(--fg-muted); display:block; margin-top:8px; letter-spacing:0.08em; text-transform:uppercase; text-align:center; }
+</style></head>
+<body><div class="card">
+  <div class="label-small">Botões</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <button class="btn btn-primary">Agendar consulta</button>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">primary · default</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <button class="btn btn-primary hover">Agendar consulta</button>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">primary · hover</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <button class="btn btn-primary" style="opacity:.5;cursor:not-allowed;">Agendar consulta</button>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">disabled</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <button class="btn btn-renovacao">Saiba mais</button>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">secundário · renovação</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <button class="btn btn-ghost">Ver localização</button>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">ghost</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <a style="font-family:var(--font-body);font-size:15px;color:#043959;font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#66ADD9;text-decoration-thickness:2px;">Ler o currículo →</a>
+      <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);font-weight:600;">text link</div>
+    </div>
+  </div>
+</div></body></html>
