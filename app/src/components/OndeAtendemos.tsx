@@ -36,7 +36,10 @@ const LOCATIONS: Location[] = [
     Icon: MapPinIcon,
     name: "HOPE — Hospital de Olhos de Pernambuco",
     body: "Rua Francisco Alves — Ilha do Leite, Recife",
-    cta: { label: "Ligar para agendar", href: "tel:+558133022121" },
+    cta: {
+      label: "Agendar pelo WhatsApp",
+      href: "https://api.whatsapp.com/send/?phone=558133022121&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Ian+Passos.&type=phone_number&app_absent=0",
+    },
   },
   {
     Icon: MapPinIcon,
