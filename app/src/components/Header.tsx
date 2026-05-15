@@ -29,6 +29,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const onDarkHero = !scrolled;
+
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="cfm-fineprint bg-[#043959] text-[#C9DFF2] py-1.5 px-4 text-center">
@@ -46,7 +48,9 @@ export function Header() {
           <a
             href="#top"
             aria-label="Dr. Ian Passos — Otorrinolaringologista"
-            className="font-display font-bold text-xl tracking-tight text-[#043959]"
+            className={`font-display font-bold text-xl tracking-tight transition-colors ${
+              onDarkHero ? "text-white" : "text-[#043959]"
+            }`}
           >
             Dr. Ian Passos
           </a>
@@ -56,7 +60,11 @@ export function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-[#043959] hover:text-[#66ADD9] transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  onDarkHero
+                    ? "text-white hover:text-[#C9DFF2]"
+                    : "text-[#043959] hover:text-[#66ADD9]"
+                }`}
               >
                 {link.label}
               </a>
@@ -75,7 +83,11 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden text-[#043959] hover:bg-[#043959]/5"
+                className={`md:hidden transition-colors ${
+                  onDarkHero
+                    ? "text-white hover:bg-white/10"
+                    : "text-[#043959] hover:bg-[#043959]/5"
+                }`}
                 aria-label="Abrir menu"
               >
                 <MenuIcon className="h-6 w-6" strokeWidth={1.5} />
