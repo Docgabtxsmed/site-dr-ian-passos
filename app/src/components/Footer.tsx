@@ -40,7 +40,7 @@ const labelClass =
 
 export function Footer() {
   return (
-    <footer className="bg-[#043959] text-white">
+    <footer className="bg-[#02233A] text-white border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           <div className="flex flex-col gap-4 max-w-[260px]">
