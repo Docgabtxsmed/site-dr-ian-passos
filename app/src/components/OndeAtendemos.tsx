@@ -27,13 +27,16 @@ const LOCATIONS: Location[] = [
     name: "PE Otorrinos",
     body: "Av. Conselheiro Aguiar — Boa Viagem, Recife",
     tag: "Adultos e Crianças",
-    cta: { label: "Ver no mapa", href: "#" },
+    cta: {
+      label: "Agendar pelo WhatsApp",
+      href: "https://api.whatsapp.com/send/?phone=5581989399672&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Ian+Passos.&type=phone_number&app_absent=0",
+    },
   },
   {
     Icon: MapPinIcon,
     name: "HOPE — Hospital de Olhos de Pernambuco",
     body: "Rua Francisco Alves — Ilha do Leite, Recife",
-    cta: { label: "Ver no mapa", href: "#" },
+    cta: { label: "Ligar para agendar", href: "tel:+558133022121" },
   },
   {
     Icon: MapPinIcon,

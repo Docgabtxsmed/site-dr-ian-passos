@@ -5,22 +5,22 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-[#043959] overflow-hidden min-h-[680px] md:min-h-[720px] pt-32 md:pt-40 pb-16 md:pb-24"
+      className="relative bg-[#043959] overflow-hidden min-h-[760px] md:min-h-[720px] pt-32 md:pt-40 pb-16 md:pb-24"
     >
-      <div className="absolute inset-0 md:left-auto md:right-0 md:w-[55%]">
+      <div className="absolute inset-0">
         <Image
-          src="/images/dr-ian-passos-hero.png"
-          alt="Dr. Ian Passos, otorrinolaringologista"
+          src="/images/dr-ian-passos-hero-test.jpg"
+          alt="Dr. Ian Passos, otorrinolaringologista, em consulta"
           fill
-          sizes="(max-width: 768px) 100vw, 55vw"
-          className="object-contain object-bottom md:object-[center_bottom]"
+          sizes="100vw"
+          className="object-cover object-center md:object-[right_25%]"
           priority
         />
       </div>
 
-      <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#043959] from-0% via-[#043959]/85 via-35% to-transparent to-100%" />
+      <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,#043959_0%,#043959ed_30%,#043959b3_55%,#04395966_80%,#04395933_100%)]" />
 
-      <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-[#043959] from-0% via-[#043959]/90 via-40% to-transparent to-100%" />
+      <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,#043959_0%,#043959f2_30%,#043959cc_50%,#04395980_70%,#04395933_100%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl flex flex-col gap-6 md:gap-7">
