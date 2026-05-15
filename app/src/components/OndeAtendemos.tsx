@@ -1,39 +1,34 @@
+"use client";
+
+import { useState } from "react";
 import {
   MapPinIcon,
-  VideoIcon,
   ShieldIcon,
   ArrowUpRightIcon,
-  type LucideIcon,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 type Location = {
-  Icon: LucideIcon;
+  key: string;
+  shortName: string;
   name: string;
   body: string;
-  tag?: string;
   cta: { label: string; href: string };
 };
 
 const LOCATIONS: Location[] = [
   {
-    Icon: MapPinIcon,
+    key: "pe-otorrinos",
+    shortName: "PE Otorrinos",
     name: "PE Otorrinos",
     body: "Av. Conselheiro Aguiar — Boa Viagem, Recife",
-    tag: "Adultos e Crianças",
     cta: {
       label: "Agendar pelo WhatsApp",
       href: "https://api.whatsapp.com/send/?phone=5581989399672&text=Ol%C3%A1%2C+gostaria+de+agendar+uma+consulta+com+o+Dr.+Ian+Passos.&type=phone_number&app_absent=0",
     },
   },
   {
-    Icon: MapPinIcon,
+    key: "hope",
+    shortName: "HOPE",
     name: "HOPE — Hospital de Olhos de Pernambuco",
     body: "Rua Francisco Alves — Ilha do Leite, Recife",
     cta: {
@@ -42,72 +37,83 @@ const LOCATIONS: Location[] = [
     },
   },
   {
-    Icon: MapPinIcon,
+    key: "jayme",
+    shortName: "Hospital Jayme da Fonte",
     name: "Hospital Jayme da Fonte",
     body: "Graças, Recife",
     cta: { label: "Ver no mapa", href: "#" },
   },
-  {
-    Icon: VideoIcon,
-    name: "Telemedicina",
-    body: "Consultas online para todo o Brasil",
-    tag: "Online",
-    cta: { label: "Agendar online", href: "https://wa.me/#" },
-  },
 ];
 
 export function OndeAtendemos() {
+  const [activeKey, setActiveKey] = useState(LOCATIONS[0].key);
+  const active = LOCATIONS.find((l) => l.key === activeKey) ?? LOCATIONS[0];
+
   return (
     <section id="localizacao" className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 md:mb-16">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-10 md:mb-12">
           <h2 className="text-[#043959]">Onde Atendemos</h2>
           <p className="text-lg text-[#043959]/80 mt-4">
-            Consultas presenciais em Recife e atendimento online para todo o
-            Brasil
+            Consultas presenciais em diferentes locais de Recife
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          {LOCATIONS.map(({ Icon, name, body, tag, cta }) => (
-            <Card
-              key={name}
-              className="bg-white border border-[#C9DFF2] ring-0 rounded-xl shadow-none hover:shadow-md transition-shadow duration-200 py-6"
-            >
-              <CardHeader className="flex flex-col gap-3 px-6">
-                <div className="flex items-start justify-between gap-2">
-                  <Icon
-                    className="h-8 w-8 text-[#043959] shrink-0"
-                    strokeWidth={1.5}
-                  />
-                  {tag && (
-                    <Badge
-                      variant="outline"
-                      className="bg-[#C9DFF2] border-transparent text-[#043959] h-7 px-3 text-sm font-medium rounded-md"
-                    >
-                      {tag}
-                    </Badge>
-                  )}
-                </div>
-                <CardTitle className="font-display font-bold text-xl text-[#043959]">
-                  {name}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col gap-4 px-6">
-                <p className="text-base text-[#043959]/85">{body}</p>
-                <a
-                  href={cta.href}
-                  className="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-[#043959] hover:text-[#66ADD9] transition-colors w-fit"
-                >
-                  <span>{cta.label}</span>
-                  <ArrowUpRightIcon
-                    className="h-4 w-4"
-                    strokeWidth={1.5}
-                  />
-                </a>
-              </CardContent>
-            </Card>
-          ))}
+        <div
+          role="tablist"
+          aria-label="Locais de atendimento"
+          className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-10"
+        >
+          {LOCATIONS.map((loc) => {
+            const isActive = loc.key === activeKey;
+            return (
+              <button
+                key={loc.key}
+                type="button"
+                role="tab"
+                aria-selected={isActive ? "true" : "false"}
+                aria-controls={`panel-${loc.key}`}
+                id={`tab-${loc.key}`}
+                onClick={() => setActiveKey(loc.key)}
+                className={`min-h-[44px] px-5 md:px-6 py-2.5 rounded-lg text-base font-medium transition-colors duration-200 border ${
+                  isActive
+                    ? "bg-[#043959] text-white border-[#043959]"
+                    : "bg-white text-[#043959] border-[#C9DFF2] hover:border-[#66ADD9] hover:text-[#66ADD9]"
+                }`}
+              >
+                {loc.shortName}
+              </button>
+            );
+          })}
+        </div>
+
+        <div
+          role="tabpanel"
+          id={`panel-${active.key}`}
+          aria-labelledby={`tab-${active.key}`}
+          className="max-w-3xl mx-auto bg-[#C9DFF2]/30 border border-[#C9DFF2] rounded-xl p-6 md:p-8"
+        >
+          <div className="flex items-start gap-3 mb-4">
+            <MapPinIcon
+              className="h-7 w-7 text-[#043959] shrink-0 mt-0.5"
+              strokeWidth={1.5}
+            />
+            <h3 className="font-display font-bold text-xl md:text-2xl text-[#043959]">
+              {active.name}
+            </h3>
+          </div>
+          <p className="text-base md:text-lg text-[#043959]/85 mb-6 ml-10">
+            {active.body}
+          </p>
+          <a
+            href={active.cta.href}
+            target={active.cta.href.startsWith("http") ? "_blank" : undefined}
+            rel={active.cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            className="ml-10 inline-flex items-center gap-1.5 text-base font-medium text-[#043959] hover:text-[#66ADD9] transition-colors"
+          >
+            <span>{active.cta.label}</span>
+            <ArrowUpRightIcon className="h-4 w-4" strokeWidth={1.5} />
+          </a>
         </div>
 
         <div className="mt-12 md:mt-16 max-w-2xl mx-auto flex items-center justify-center gap-2 text-sm text-[#8298A8]">
