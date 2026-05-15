@@ -126,7 +126,7 @@ export function OndeAtendemos() {
           </a>
         </div>
 
-        <div className="mt-12 md:mt-16 max-w-4xl mx-auto bg-[#C9DFF2] rounded-2xl p-3 md:p-4">
+        <div className="mt-12 md:mt-16 max-w-3xl mx-auto bg-[#C9DFF2] rounded-2xl p-3 md:p-4">
           <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
             <div className="flex items-center gap-2.5 mb-5">
               <ShieldIcon

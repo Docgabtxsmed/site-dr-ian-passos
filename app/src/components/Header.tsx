@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { MenuIcon } from "lucide-react";
 import {
   Sheet,
@@ -48,11 +49,19 @@ export function Header() {
           <a
             href="#top"
             aria-label="Dr. Ian Passos — Otorrinolaringologista"
-            className={`font-display font-bold text-xl tracking-tight transition-colors ${
+            className={`flex items-center gap-2.5 font-display font-bold text-xl tracking-tight transition-colors ${
               onDarkHero ? "text-white" : "text-[#043959]"
             }`}
           >
-            Dr. Ian Passos
+            <Image
+              src={onDarkHero ? "/images/logo-mark-on-dark.png" : "/images/logo-mark.png"}
+              alt=""
+              width={80}
+              height={88}
+              className="h-9 w-auto"
+              priority
+            />
+            <span>Dr. Ian Passos</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8" aria-label="Navegação principal">

@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-[#043959] overflow-hidden min-h-[760px] md:min-h-[720px] pt-32 md:pt-40 pb-16 md:pb-24"
+      className="relative bg-[#043959] overflow-hidden min-h-[660px] md:min-h-[720px] pt-32 md:pt-40 pb-16 md:pb-24"
     >
       <div className="absolute inset-0">
         <Image
@@ -13,12 +13,12 @@ export function Hero() {
           alt="Dr. Ian Passos, otorrinolaringologista, em consulta"
           fill
           sizes="100vw"
-          className="object-cover object-center md:object-[right_25%]"
+          className="object-cover object-center md:object-[right_25%] scale-[1.2] md:scale-100"
           priority
         />
       </div>
 
-      <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,#043959_0%,#043959ed_30%,#043959b3_55%,#04395966_80%,#04395933_100%)]" />
+      <div className="absolute inset-0 md:hidden bg-[linear-gradient(to_bottom,#043959f2_0%,#043959d9_30%,#04395999_55%,#0439594d_80%,#0439591a_100%)]" />
 
       <div className="absolute inset-0 hidden md:block bg-[linear-gradient(to_right,#043959_0%,#043959f2_30%,#043959cc_50%,#04395980_70%,#04395933_100%)]" />
 
