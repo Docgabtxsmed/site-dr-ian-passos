@@ -60,7 +60,7 @@ export function Sobre() {
               <p>
                 Médico formado pela Universidade Federal de Pernambuco (UFPE),
                 com residência em Otorrinolaringologia pelo Instituto de
-                Medicina Integral Prof. Fernando Figueira (IMIP) e fellowship
+                Medicina Integral Prof. Fernando Figueira (IMIP) e observeship
                 internacional em Rinologia em Miami (2024).
               </p>
               <p>

@@ -15,6 +15,16 @@ type Location = {
   cta: { label: string; href: string };
 };
 
+const CONVENIOS = [
+  "Bradesco Saúde",
+  "SulAmérica",
+  "Amil",
+  "Allianz",
+  "Unimed Recife",
+  "Cassi",
+  "Postal Saúde",
+];
+
 const LOCATIONS: Location[] = [
   {
     key: "pe-otorrinos",
@@ -116,15 +126,36 @@ export function OndeAtendemos() {
           </a>
         </div>
 
-        <div className="mt-12 md:mt-16 max-w-2xl mx-auto flex items-center justify-center gap-2 text-sm text-[#8298A8]">
-          <ShieldIcon
-            className="h-4 w-4 shrink-0"
-            strokeWidth={1.5}
-          />
-          <p className="text-center">
-            Aceitamos diversos planos de saúde: Bradesco, SulAmérica, Amil,
-            Allianz e outros.
-          </p>
+        <div className="mt-12 md:mt-16 max-w-4xl mx-auto bg-[#C9DFF2] rounded-2xl p-3 md:p-4">
+          <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
+            <div className="flex items-center gap-2.5 mb-5">
+              <ShieldIcon
+                className="h-5 w-5 text-[#043959] shrink-0"
+                strokeWidth={1.5}
+              />
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#043959]">
+                Convênios Aceitos
+              </span>
+            </div>
+
+            <ul className="flex flex-wrap gap-2 mb-4">
+              {CONVENIOS.map((c) => (
+                <li
+                  key={c}
+                  className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-[#C9DFF2] text-[#043959] text-sm font-semibold"
+                >
+                  {c}
+                </li>
+              ))}
+              <li className="inline-flex items-center px-3.5 py-1.5 rounded-lg bg-white text-[#043959] text-sm font-semibold border border-[#043959]/15">
+                + outros
+              </li>
+            </ul>
+
+            <p className="text-xs text-[#8298A8]">
+              Consulte cobertura específica do seu plano antes do agendamento.
+            </p>
+          </div>
         </div>
       </div>
     </section>
